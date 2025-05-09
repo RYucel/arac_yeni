@@ -1,4 +1,4 @@
-%%writefile app.py
+# Vehicle Sales Time Series Analysis
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
