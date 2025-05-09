@@ -12,11 +12,11 @@ st.title('Vehicle Sales Time Series Analysis (Cumulative Sales)')
 @st.cache_data
 def load_data():
     file_paths = [
-        '/content/Yeni_Arac_2020.csv',
-        '/content/Yeni_Arac_2021.csv',
-        '/content/Yeni_Arac_2022.csv',
-        '/content/Yeni_Arac_2023.csv',
-        '/content/Yeni_Arac_2024.csv'
+        'Yeni_Arac_2020.csv',
+        'Yeni_Arac_2021.csv',
+        'Yeni_Arac_2022.csv',
+        'Yeni_Arac_2023.csv',
+        'Yeni_Arac_2024.csv'
     ]
     dfs = []
     for file_path in file_paths:
