@@ -1,4 +1,3 @@
-# Vehicle Sales Time Series Analysis
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -6,7 +5,7 @@ import re
 from fuzzywuzzy import process # Included in case you decide to use fuzzy matching later
 import numpy as np # Included in case you decide to use fuzzy matching later
 
-st.title('Vehicle Sales Time Series Analysis (Cumulative Sales)')
+st.title('TRNC New Vehicle Sales Time Series Analysis (Cumulative Sales)')
 
 # Load and Combine Data
 @st.cache_data
@@ -35,6 +34,11 @@ melted_df = pd.melt(combined_df_cleaned, id_vars=id_vars, value_vars=month_colum
 
 # Filter for 'Yeni' vehicles
 melted_df = melted_df[melted_df['Arac Kayit Tip'] == 'Yeni']
+
+# --- Filter by Aractip ---
+allowed_aractips = ['SALON ARAÇ', 'ESTATE']
+melted_df = melted_df[melted_df['Aractip'].isin(allowed_aractips)]
+# --------------------------
 
 # --- Brand Name Standardization ---
 def standardize_brand_name(brand_name):
